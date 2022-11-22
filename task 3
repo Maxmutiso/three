@@ -1,0 +1,116 @@
+1. With relevant examples, explain the following concepts as used in Java programming.
+a. Mutable classes. 
+
+Explain what is meant by mutable class
+A mutable class is one that can change its internal state after it is created.
+
+Write a program that implements the concept of mutable class
+
+public class Example {  
+    private String str;  
+    Example(String str) {  
+    this.str = str;  
+    }  
+    public String getName() {  
+    return str;  
+    }  
+    public void setName(String coursename) {  
+    this.str = coursename;  
+    }  
+    public static void main(String[] args) {  
+    Example obj = new Example("Diploma in IT");  
+    System.out.println(obj.getName());  
+    // Here, we can update the name using the setName method.  
+    obj.setName("Java Programming");  
+    System.out.println(obj.getName());  
+    }   
+}  
+
+
+
+
+
+
+b. Immutable classes. 
+Explain what is meant by immutable class
+An immutable class is one that can not change its internal state after it is created.
+
+Write a program that implements the concept of immutable class
+
+
+public class Example {  
+    private final String str;  
+    Example(final String str) {  
+        this.str = str;  
+    } 
+    
+    public final String getName() {  
+        return str;  
+    }  
+        
+        //main method
+    public static void main(String[] args) {  
+    Example obj = new Example("Core Java Programming.");  
+        System.out.println(obj.getName());  
+    }  
+}  
+
+
+
+
+c. Explain the situations where mutable classes are more preferable than immutable classes when writing a Java program.
+-	Immutable classes are thread-safe so you will not have any synchronization issues.
+-	Immutable classes are good Map keys and Set elements, since these typically do not change once created.
+-	Immutable classes it easier to write, use and reason about the code (class invariant is established once and then unchanged)
+-	Immutable classes make it easier to parallelize your program as there are no conflicts among objects.
+
+
+
+
+2. 
+a.	Explain what a String buffer class is as used in Java, the syntax of creating an object of StringBuffer class and Explain the methods in the StringBuffer class.
+String buffer is a thread-safe, a sequence of characters that can change.
+The syntax of creating a StringBuffer object is:
+Methods in the StringBuffer class:
+-	length() - used to return the length of the string i.e. total number of characters.
+-	reverse() - used to return the string in reversed order. 
+-	capacity() - used to return the current capacity.
+
+
+b.	Write the output of the following program.
+class Myoutput 
+    1.     {
+    2.         public static void main(String args[])
+    3.         {
+    4.             String ast = "hello i love java";
+    5.             System.out.println(ast.indexOf('e')+" "+ast.indexOf('ast')+" "+ast.lastIndexOf('l')+" "+ast .lastIndexOf('v'));
+    6.         }
+    7.     }
+
+Output:
+The program has no output
+
+
+
+c.	Explain your answer in (2b) above.
+In the above code we have ast.indexOf('ast'). indexOf() does not take a String argument hence resulting to an error.
+
+d.	With explanation, write the output of the following program.
+class Myoutput 
+    1.     {
+    2.         public static void main(String args[])
+    3.         { 
+    4.              StringBuffer bfobj = new StringBuffer("Jambo");
+    5.              StringBuffer bfobj1 = new StringBuffer(" Kenya");
+    6.              c.append(bfobj1);
+    7.              System.out.println(bfobj);
+    8.         }
+    9.     }
+
+The program does not run because of an error in line 6. “c.append(bfobj1);”. The variable “c” was not created.
+
+
+e.	With explanation, write the output of the following program.
+class Myoutput
+    1.     {
+    2.         public …
